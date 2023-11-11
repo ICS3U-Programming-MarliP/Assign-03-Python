@@ -5,27 +5,31 @@
 # if they have been with the company for 5 or more years it will calculate
 # a 5% bonus based on their salary and displays the user their bonus.
 
+
 def main():
     # ask user for information to get bonus and set variables
-    salary = float(input("Please enter your yearly salary: "))
-    company_time = float(input("Please enter your time with the company in years: "))
+    salary_str = str(input("Please enter your yearly salary: "))
+    company_time_str = str(input("Please enter your time with the company in years: "))
 
-    #calculating and displaying salary
+    # calculating and displaying salary
     try:
-        #if user company time is under 5 years
-        if company_time < 5:
+        salary_int = int(salary_str)
+        company_time_int = int(company_time_str)
+        # if user company time is under 5 years
+        if company_time_int < 5:
             print("You do not qualify for a bonus.")
-        #if user company time is 5+ years
-        elif company_time >= 5:
-            bonus = salary * 0.05
+        # if user company time is 5+ years
+        elif company_time_int >= 5:
+            bonus = salary_int * 0.05
             print("Your bonus is {}$!".format(bonus))
-    #catch input errors
-    except Exception:
+    # catch input errors
+    except:
         print("Please enter valid numbers.")
 
-    #thank user for playing
+    # thank user for playing
     finally:
         print("Thanks for participating!")
+
 
 if __name__ == "__main__":
     main()
